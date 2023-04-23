@@ -4,6 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import ru.open.api_spring.dto.TechnicDto;
 import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.service.TechnicService;
 
@@ -30,8 +31,8 @@ public class TechnicController {
 
 	@Operation(summary = "Создание модельного ряда")
 	@PostMapping
-	public void createTechnic(@RequestBody Technic technic) {
-		technicService.save(technic);
+	public void createTechnic(@RequestBody TechnicDto technicDto) {
+		technicService.save(technicDto);
 	}
 
 

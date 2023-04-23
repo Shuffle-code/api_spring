@@ -1,12 +1,8 @@
 package ru.open.api_spring.dto;
 
-//import lombok.*;
-
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.entity.common.enums.Presence;
 
-import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 
@@ -24,13 +20,13 @@ public class ModelDto {
     @DecimalMin(value = "0.0", inclusive = false)
     @Digits(integer = 6, fraction = 2)
     private BigDecimal cost;
-    @NotNull
     private String technology;
 
     @NotNull
     private Presence presence;
     @NotNull
-    private int technic_id;
+    private Technic technic;
+    private String category;
 
     public String getName() {
         return name;
@@ -88,11 +84,19 @@ public class ModelDto {
         this.presence = presence;
     }
 
-    public int getTechnic_id() {
-        return technic_id;
+    public Technic getTechnic() {
+        return technic;
     }
 
-    public void setTechnic_id(int technic_id) {
-        this.technic_id = technic_id;
+    public void setTechnic(Technic technic) {
+        this.technic = technic;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

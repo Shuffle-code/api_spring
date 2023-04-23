@@ -40,21 +40,28 @@ public class Model {
     @Column(name = "PRESENCE")
     private Presence presence;
 
-    @Override
-    public String toString() {
-        return "Model{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", serialNumber='" + serialNumber + '\'' +
-                ", color='" + color + '\'' +
-                ", size='" + size + '\'' +
-                ", cost=" + cost +
-                ", category='" + category + '\'' +
-                ", technology='" + technology + '\'' +
-                ", technic=" + technic +
-                ", presence=" + presence +
-                '}';
+    public String getCategory() {
+        return category;
     }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+//    @Override
+//    public String toString() {
+//        return "Model{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", serialNumber='" + serialNumber + '\'' +
+//                ", color='" + color + '\'' +
+//                ", size='" + size + '\'' +
+//                ", cost=" + cost +
+//                ", category='" + category + '\'' +
+//                ", technology='" + technology + '\'' +
+//                ", technic=" + technic +
+//                ", presence=" + presence +
+//                '}';
+//    }
 
     public Long getId() {
         return id;
