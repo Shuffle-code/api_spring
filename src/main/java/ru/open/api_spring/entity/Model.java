@@ -125,13 +125,13 @@ public class Model {
         this.technology = technology;
     }
 
-    public Technic getTechnic() {
-        return technic;
-    }
-
-    public void setTechnic(Technic technic) {
-        this.technic = technic;
-    }
+//    public Technic getTechnic() {
+//        return technic;
+//    }
+//
+//    public void setTechnic(Technic technic) {
+//        this.technic = technic;
+//    }
 
     public Presence getPresence() {
         return presence;

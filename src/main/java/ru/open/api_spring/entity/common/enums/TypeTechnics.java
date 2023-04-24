@@ -6,11 +6,11 @@ package ru.open.api_spring.entity.common.enums;
 //@Getter
 //@RequiredArgsConstructor
 public enum TypeTechnics {
-    TV("ТВ"),
-    VACUUM_CLEANER("Пылесос"),
-    FRIDGE("Холодильник"),
-    SMARTPHONE("Смартфон"),
-    PC("ПК");
+    TV("TV"),
+    VACUUM_CLEANER("VACUUM_CLEANER"),
+    FRIDGE("FRIDGE"),
+    SMARTPHONE("SMARTPHONE"),
+    PC("PC");
     private final String title;
 
     TypeTechnics(String title) {
@@ -19,8 +19,6 @@ public enum TypeTechnics {
 
     @Override
     public String toString() {
-        return "TypeTechnics{" +
-                "title='" + title + '\'' +
-                '}';
+        return title;
     }
 }

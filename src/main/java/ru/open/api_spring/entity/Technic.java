@@ -1,4 +1,5 @@
 package ru.open.api_spring.entity;
+import org.hibernate.annotations.Where;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import ru.open.api_spring.entity.common.enums.Presence;
 import ru.open.api_spring.entity.common.enums.TypeTechnics;
@@ -32,8 +33,8 @@ public class Technic {
     @Enumerated(EnumType.STRING)
     @Column(name = "TYPE_TECHNIC")
     private TypeTechnics typeTechnic;
-
     @OneToMany(mappedBy = "technic", cascade = CascadeType.MERGE)
+    @Where(clause = "presence = 'AVAILABLE'")
     private Set<Model> models;
 
     @Override
@@ -43,9 +44,19 @@ public class Technic {
                 ", title='" + title + '\'' +
                 ", manufactureCountry='" + manufactureCountry + '\'' +
                 ", manufacture='" + manufacture + '\'' +
-                ", orderOn='" + orderOn + '\'' +
-                ", credit='" + credit + '\'' +
-                ", typeTechnic=" + typeTechnic;
+                ", orderOn=" + orderOn +
+                ", credit=" + credit +
+                ", typeTechnic=" + typeTechnic +
+                ", models=" + models +
+                '}';
+    }
+
+    public Set<Model> getModels() {
+        return models;
+    }
+
+    public void setModels(Set<Model> models) {
+        this.models = models;
     }
 
     public Long getId() {

@@ -38,15 +38,20 @@ public class ModelController {
 
 	@Operation(summary = "Получение списка всех моделей по ID модельного ряда")
 	@GetMapping("/all/tech/{Id}")
-//	@RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
-	public List<Model> findAllById(@PathVariable("Id") int id) {
+	public List<CommonDto> findAllById(@PathVariable("Id") Long id) {
 		return modelService.findByTechnicId(id);
 	}
-
 
 	@Operation(summary = "Получение списка моделей по виду техники")
 	@GetMapping("/all/{name}")
 	public List<CommonDto> findAllByTypeTechnic(@PathVariable("name") String name) {
 		return modelService.findAllModelByTypeTechnics(name);
 	}
+
+	@Operation(summary = "Получение модели по наименованию")
+	@GetMapping("/byname/{name}")
+	public Model findAllByName(@PathVariable("name") String name) {
+		return modelService.findByNameNew(name);
+	}
+
 }

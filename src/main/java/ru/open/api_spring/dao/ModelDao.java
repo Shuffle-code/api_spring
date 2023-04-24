@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ModelDao extends JpaRepository<Model, Long> {
     @Query(value = "SELECT * from model WHERE technic_id = :id", nativeQuery = true)
-    List<Model> findByTechnicId (@Param("id") int id);
+    List<Model> findByTechnicId (@Param("id") Long id);
 
     @Query(value = "SELECT * from model WHERE name = :name", nativeQuery = true)
     List<String> findByName (@Param("name") String name);
@@ -22,6 +22,6 @@ public interface ModelDao extends JpaRepository<Model, Long> {
     List<Model> findAllTV();
 
     @Query(value = "SELECT * from model WHERE LOWER(name) = LOWER(:name)", nativeQuery = true)
-    List<Model> findByNameNew (@Param("name") String lastname);
+    Model findByNameNew (@Param("name") String lastname);
 
 }
