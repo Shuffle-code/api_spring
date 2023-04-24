@@ -41,26 +41,38 @@ public class ModelService {
     }
 
     public List<CommonDto> findAllModelByTypeTechnics(String name){
-        List<CommonDto> tvDtoList = new ArrayList<>();
-        for (Model m : modelDao.findAllByTypeTechnic(name)) {
+        return findModelByType(modelDao.findAllByTypeTechnic(name), name);
+    }
+
+
+    public List<CommonDto> findByNameNew(String name){
+        return findModelByType(modelDao.findByNameNew(name), name);
+    }
+
+
+    public List<CommonDto> findModelByType(List<Model> modelList, String name){
+        List<CommonDto> dtoList = new ArrayList<>();
+        for (Model m : modelList) {
             switch (name){
                 case ("TV"):
-                    tvDtoList.add(modelMapper.map(m, TvDto.class));
+                    dtoList.add(modelMapper.map(m, TvDto.class));
                     break;
                 case ("PC"):
-                    tvDtoList.add(modelMapper.map(m, PCDto.class));
+                    dtoList.add(modelMapper.map(m, PCDto.class));
                     break;
                 case ("VACUUM_CLEANER"):
-                    tvDtoList.add(modelMapper.map(m, VacuumCleanerDto.class));
+                    dtoList.add(modelMapper.map(m, VacuumCleanerDto.class));
                     break;
                 case ("FRIDGE"):
-                    tvDtoList.add(modelMapper.map(m, FridgeDto.class));
+                    dtoList.add(modelMapper.map(m, FridgeDto.class));
                     break;
                 case ("SMARTPHONE"):
-                    tvDtoList.add(modelMapper.map(m, SmartphoneDto.class));
+                    dtoList.add(modelMapper.map(m, SmartphoneDto.class));
                     break;
             }
         }
-        return tvDtoList;
+        return dtoList;
     }
+
+
 }

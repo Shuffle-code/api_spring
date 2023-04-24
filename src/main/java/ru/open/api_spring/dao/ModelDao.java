@@ -21,4 +21,7 @@ public interface ModelDao extends JpaRepository<Model, Long> {
             "( SELECT id from technic  where technic.type_technic = 'TV')", nativeQuery = true)
     List<Model> findAllTV();
 
+    @Query(value = "SELECT * from model WHERE LOWER(name) = LOWER(:name)", nativeQuery = true)
+    List<Model> findByNameNew (@Param("name") String lastname);
+
 }
