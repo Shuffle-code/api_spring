@@ -16,4 +16,11 @@ public enum TypeTechnics {
     TypeTechnics(String title) {
         this.title = title;
     }
+
+    @Override
+    public String toString() {
+        return "TypeTechnics{" +
+                "title='" + title + '\'' +
+                '}';
+    }
 }

@@ -12,4 +12,13 @@ public interface ModelDao extends JpaRepository<Model, Long> {
 
     @Query(value = "SELECT * from model WHERE name = :name", nativeQuery = true)
     List<String> findByName (@Param("name") String name);
+
+    @Query(value = "SELECT * FROM model WHERE technic_id IN " +
+            "( SELECT id from technic  where technic.type_technic = :name)", nativeQuery = true)
+    List<Model> findAllByTypeTechnic(@Param("name") String name);
+
+    @Query(value = "SELECT * FROM model WHERE technic_id IN " +
+            "( SELECT id from technic  where technic.type_technic = 'TV')", nativeQuery = true)
+    List<Model> findAllTV();
+
 }

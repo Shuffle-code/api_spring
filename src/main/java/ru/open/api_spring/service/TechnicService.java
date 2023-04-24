@@ -3,7 +3,7 @@ package ru.open.api_spring.service;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import ru.open.api_spring.dao.TechnicDao;
-import ru.open.api_spring.dto.TechnicDto;
+import ru.open.api_spring.dto.common.TechnicDto;
 import ru.open.api_spring.entity.Technic;
 
 import java.util.List;

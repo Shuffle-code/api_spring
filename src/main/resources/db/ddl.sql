@@ -25,8 +25,20 @@ CREATE TABLE TECHNIC (
                         TYPE_TECHNIC VARCHAR(80) NOT NULL
 );
 
+CREATE TABLE TYPE_TECHNIC (
+                         ID BIGSERIAL NOT NULL PRIMARY KEY,
+                         TITLE VARCHAR(80) NOT NULL
+);
+
 ALTER TABLE MODEL
-    ADD COLUMN CATEGORY VARCHAR(80);
+    ADD COLUMN TYPE_PROCESSOR VARCHAR(80),
+    ADD COLUMN REMEMBER VARCHAR(80),
+    ADD COLUMN COUNT_CAMERAS INT,
+    ADD COLUMN COUNT_DOORS INT,
+    ADD COLUMN COUNT_MODES INT,
+    ADD COLUMN COUNT_DUST_COLLECTOR INT,
+    ADD COLUMN TYPE_COMPRESSOR VARCHAR(80)
+;
 --
 -- Наименование, Страна производитель, Фирма производитель,
 --     возможность заказа онлайн(да/нет), возможность оформления рассрочки(да/нет),

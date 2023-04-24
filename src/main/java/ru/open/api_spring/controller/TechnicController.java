@@ -4,7 +4,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.open.api_spring.dto.TechnicDto;
+import ru.open.api_spring.dto.common.TechnicDto;
 import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.service.TechnicService;
 
@@ -23,7 +23,7 @@ public class TechnicController {
 	public List<Technic> findAll() {
 		return technicService.findAll();
 	}
-
+	@Operation(summary = "Получение модельного ряда по ID")
 	@GetMapping("/{Id}")
 	public Technic getTechnic(@PathVariable("Id") Long id) {
 		return technicService.findById(id);

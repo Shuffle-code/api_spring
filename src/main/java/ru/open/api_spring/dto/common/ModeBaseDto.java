@@ -1,12 +1,15 @@
-package ru.open.api_spring.dto;
+package ru.open.api_spring.dto.common;
 
 import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.entity.common.enums.Presence;
 
-import javax.validation.constraints.*;
+import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.math.BigDecimal;
 
-public class ModelDto {
+public class ModeBaseDto implements CommonDto {
     private Long id;
     @NotBlank
     private String name;
@@ -20,13 +23,19 @@ public class ModelDto {
     @DecimalMin(value = "0.0", inclusive = false)
     @Digits(integer = 6, fraction = 2)
     private BigDecimal cost;
-    private String technology;
 
     @NotNull
     private Presence presence;
     @NotNull
     private Technic technic;
-    private String category;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -68,14 +77,6 @@ public class ModelDto {
         this.cost = cost;
     }
 
-    public String getTechnology() {
-        return technology;
-    }
-
-    public void setTechnology(String technology) {
-        this.technology = technology;
-    }
-
     public Presence getPresence() {
         return presence;
     }
@@ -90,13 +91,5 @@ public class ModelDto {
 
     public void setTechnic(Technic technic) {
         this.technic = technic;
-    }
-
-    public String getCategory() {
-        return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 }

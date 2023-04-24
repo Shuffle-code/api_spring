@@ -1,16 +1,12 @@
-package ru.open.api_spring.dto;
+package ru.open.api_spring.dto.common;
 
 //import lombok.*;
 
-import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.entity.common.enums.Presence;
 import ru.open.api_spring.entity.common.enums.TypeTechnics;
 
-import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.math.BigDecimal;
 
 public class TechnicDto {
     private Long id;

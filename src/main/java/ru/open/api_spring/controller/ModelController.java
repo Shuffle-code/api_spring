@@ -4,7 +4,9 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import ru.open.api_spring.dto.ModelDto;
+import ru.open.api_spring.dto.TvDto;
+import ru.open.api_spring.dto.common.CommonDto;
+import ru.open.api_spring.dto.common.ModelDto;
 import ru.open.api_spring.entity.Model;
 import ru.open.api_spring.service.ModelService;
 import java.util.List;
@@ -33,11 +35,18 @@ public class ModelController {
 	public void createModel(@RequestBody ModelDto modelDto) {
 		modelService.save(modelDto);
 	}
+
 	@Operation(summary = "Получение списка всех моделей по ID модельного ряда")
-	@GetMapping("/all/{Id}")
+	@GetMapping("/all/tech/{Id}")
 //	@RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
-	public List<Model> findAllTv(@PathVariable("Id") int id) {
+	public List<Model> findAllById(@PathVariable("Id") int id) {
 		return modelService.findByTechnicId(id);
 	}
 
+
+	@Operation(summary = "Получение списка моделей по виду техники")
+	@GetMapping("/all/{name}")
+	public List<CommonDto> findAllByTypeTechnic(@PathVariable("name") String name) {
+		return modelService.findAllModelByTypeTechnics(name);
+	}
 }
