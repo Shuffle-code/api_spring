@@ -40,7 +40,8 @@
      <li>Файл для запуска приложения:
      build/libs/api_spring-0.0.1-SNAPSHOT.jar</li>
    <li>Запуск: java -jar api_spring-0.0.1-SNAPSHOT.jar &</li>
-   <li>База данных необходимо создать (в PostgresQl отсутствует: "?createDatabaseIfNotExist=true"),</li>
+   <li>Базу данных необходимо создать в удобной директории</li>
+   <li>(в PostgresQl отсутствует: "?createDatabaseIfNotExist=true"),</li>
    <li>таблицы и наполнения создается автоматически с помощью liquibase</li>
 </ul>
      </dev>
