@@ -85,11 +85,11 @@ public class ModeBaseDto implements CommonDto {
         this.presence = presence;
     }
 
-    public Technic getTechnic() {
-        return technic;
-    }
-
-    public void setTechnic(Technic technic) {
-        this.technic = technic;
-    }
+//    public Technic getTechnic() {
+//        return technic;
+//    }
+//
+//    public void setTechnic(Technic technic) {
+//        this.technic = technic;
+//    }
 }

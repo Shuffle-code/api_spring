@@ -8,20 +8,16 @@ import ru.open.api_spring.dto.*;
 import ru.open.api_spring.dto.common.CommonDto;
 import ru.open.api_spring.dto.common.ModelDto;
 import ru.open.api_spring.entity.Model;
-import ru.open.api_spring.entity.Technic;
 import ru.open.api_spring.entity.common.enums.TypeTechnics;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class ModelService {
     private final ModelDao modelDao;
     private final ModelMapper modelMapper;
-
     private final TechnicDao technicDao;
-
 
     public ModelService(ModelDao modelDao, ModelMapper modelMapper, TechnicDao technicDao) {
         this.modelDao = modelDao;
@@ -48,19 +44,29 @@ public class ModelService {
         return findModelByType(modelDao.findByTechnicId(id), typeTechnic.toString());
     }
 
-//    public List<Model> findByTechnicId(Long id){
-//        return modelDao.findByTechnicId(id);
-//    }
-
     public List<CommonDto> findAllModelByTypeTechnics(String name){
         return findModelByType(modelDao.findAllByTypeTechnic(name), name);
     }
 
-
-    public Model findByNameNew(String name){
+    public List<Model> findByNameNew(String name){
         return modelDao.findByNameNew(name);
     }
 
+    public List<Model> findByColor(String color){
+        return modelDao.findByColor(color);
+    }
+
+    public List<Model> findByCostNew(Double a, Double b){
+        return modelDao.findByCostNew(a, b);
+    }
+
+    public List<Model> findAllSortName(){
+        return modelDao.findAllSortName();
+    }
+
+    public List<Model> findAllSortCost(){
+        return modelDao.findAllSortCost();
+    }
 
     public List<CommonDto> findModelByType(List<Model> modelList, String name){
         List<CommonDto> dtoList = new ArrayList<>();
@@ -85,6 +91,5 @@ public class ModelService {
         }
         return dtoList;
     }
-
 
 }

@@ -23,13 +23,27 @@ public class ModelDto {
     @DecimalMin(value = "0.0", inclusive = false)
     @Digits(integer = 6, fraction = 2)
     private BigDecimal cost;
-    private String technology;
-
     @NotNull
     private Presence presence;
     @NotNull
-    private Technic technic;
+    private Integer technic_id;
+    private String technology;
+
     private String category;
+
+    private String countDoors;
+
+    private String typeCompressor;
+
+    private String typeProcessor;
+
+    private String remember;
+
+    private String countCameras;
+
+    private String countDustCollector;
+
+    private String countModes;
 
     public String getName() {
         return name;
@@ -71,14 +85,6 @@ public class ModelDto {
         this.cost = cost;
     }
 
-    public String getTechnology() {
-        return technology;
-    }
-
-    public void setTechnology(String technology) {
-        this.technology = technology;
-    }
-
     public Presence getPresence() {
         return presence;
     }
@@ -87,12 +93,20 @@ public class ModelDto {
         this.presence = presence;
     }
 
-    public Technic getTechnic() {
-        return technic;
+//    public Technic getTechnic() {
+//        return technic;
+//    }
+//
+//    public void setTechnic(Technic technic) {
+//        this.technic = technic;
+//    }
+
+    public String getTechnology() {
+        return technology;
     }
 
-    public void setTechnic(Technic technic) {
-        this.technic = technic;
+    public void setTechnology(String technology) {
+        this.technology = technology;
     }
 
     public String getCategory() {
@@ -101,5 +115,69 @@ public class ModelDto {
 
     public void setCategory(String category) {
         this.category = category;
+    }
+
+    public String getCountDoors() {
+        return countDoors;
+    }
+
+    public void setCountDoors(String countDoors) {
+        this.countDoors = countDoors;
+    }
+
+    public String getTypeCompressor() {
+        return typeCompressor;
+    }
+
+    public void setTypeCompressor(String typeCompressor) {
+        this.typeCompressor = typeCompressor;
+    }
+
+    public String getTypeProcessor() {
+        return typeProcessor;
+    }
+
+    public void setTypeProcessor(String typeProcessor) {
+        this.typeProcessor = typeProcessor;
+    }
+
+    public String getRemember() {
+        return remember;
+    }
+
+    public void setRemember(String remember) {
+        this.remember = remember;
+    }
+
+    public String getCountCameras() {
+        return countCameras;
+    }
+
+    public void setCountCameras(String countCameras) {
+        this.countCameras = countCameras;
+    }
+
+    public String getCountDustCollector() {
+        return countDustCollector;
+    }
+
+    public void setCountDustCollector(String countDustCollector) {
+        this.countDustCollector = countDustCollector;
+    }
+
+    public String getCountModes() {
+        return countModes;
+    }
+
+    public void setCountModes(String countModes) {
+        this.countModes = countModes;
+    }
+
+    public Integer getTechnic_id() {
+        return technic_id;
+    }
+
+    public void setTechnic_id(Integer technic_id) {
+        this.technic_id = technic_id;
     }
 }

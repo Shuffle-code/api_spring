@@ -24,6 +24,18 @@ public class ModelController {
 	public List<Model> findAll() {
 		return modelService.findAll();
 	}
+	@Operation(summary = "Получение списка всех моделей (сортировка по стоимости)")
+	@GetMapping("/sort_cost")
+//	@RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
+	public List<Model> findAllSortCost() {
+		return modelService.findAllSortCost();
+	}
+	@Operation(summary = "Получение списка всех моделей (сортировка по алфавиту)")
+	@GetMapping("/sort")
+//	@RequestMapping(value = "/employees", method = RequestMethod.GET, produces = "application/json")
+	public List<Model> findAllSortName() {
+		return modelService.findAllSortName();
+	}
 	@Operation(summary = "Получение модели по ID")
 	@GetMapping("/{Id}")
 	public Model getModel(@PathVariable("Id") Long id) {
@@ -49,9 +61,22 @@ public class ModelController {
 	}
 
 	@Operation(summary = "Получение модели по наименованию")
-	@GetMapping("/byname/{name}")
-	public Model findAllByName(@PathVariable("name") String name) {
+	@GetMapping("/name/{name}")
+	public List<Model> findByName(@PathVariable("name") String name) {
 		return modelService.findByNameNew(name);
 	}
+
+	@Operation(summary = "Получение модели по цвету")
+	@GetMapping("/color/{color}")
+	public List<Model> findAllByColor(@PathVariable("color") String color) {
+		return modelService.findByColor(color);
+	}
+
+	@Operation(summary = "Получение списка моделей по диапазону стоимости")
+	@GetMapping("/cost/{a}&{b}")
+	public List<Model> findByCostNew(@PathVariable("a") Double a, @PathVariable("b") Double b) {
+		return modelService.findByCostNew(a, b);
+	}
+
 
 }
