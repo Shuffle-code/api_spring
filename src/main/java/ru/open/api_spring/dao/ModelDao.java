@@ -26,4 +26,8 @@ public interface ModelDao extends JpaRepository<Model, Long> {
     @Query(value = "SELECT * from model ORDER BY cost ASC", nativeQuery = true)
     List<Model> findAllSortCost();
 
+    @Query(value = "SELECT * FROM model WHERE technic_id IN " +
+            "( SELECT id from technic  where technic.type_technic = 'PC')", nativeQuery = true)
+    List<Model> findAllPc();
+
 }

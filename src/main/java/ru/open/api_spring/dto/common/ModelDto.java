@@ -19,19 +19,19 @@ public class ModelDto {
     private String color;
     @NotBlank
     private String size;
-    @NotNull
-    @DecimalMin(value = "0.0", inclusive = false)
+    @NotBlank
+//    @DecimalMin(value = "0.0", inclusive = false)
     @Digits(integer = 6, fraction = 2)
     private BigDecimal cost;
     @NotNull
     private Presence presence;
-    @NotNull
-    private Integer technic_id;
+//    @NotNull
+//    private Integer technicId;
     private String technology;
 
     private String category;
 
-    private String countDoors;
+    private Integer countDoors;
 
     private String typeCompressor;
 
@@ -39,11 +39,11 @@ public class ModelDto {
 
     private String remember;
 
-    private String countCameras;
+    private Integer countCameras;
 
-    private String countDustCollector;
+    private Integer countDustCollector;
 
-    private String countModes;
+    private Integer countModes;
 
     public String getName() {
         return name;
@@ -117,13 +117,6 @@ public class ModelDto {
         this.category = category;
     }
 
-    public String getCountDoors() {
-        return countDoors;
-    }
-
-    public void setCountDoors(String countDoors) {
-        this.countDoors = countDoors;
-    }
 
     public String getTypeCompressor() {
         return typeCompressor;
@@ -149,35 +142,50 @@ public class ModelDto {
         this.remember = remember;
     }
 
-    public String getCountCameras() {
+    public Integer getCountDoors() {
+        return countDoors;
+    }
+
+    public void setCountDoors(Integer countDoors) {
+        this.countDoors = countDoors;
+    }
+
+    public Integer getCountCameras() {
         return countCameras;
     }
 
-    public void setCountCameras(String countCameras) {
+    public void setCountCameras(Integer countCameras) {
         this.countCameras = countCameras;
     }
 
-    public String getCountDustCollector() {
+    public Integer getCountDustCollector() {
         return countDustCollector;
     }
 
-    public void setCountDustCollector(String countDustCollector) {
+    public void setCountDustCollector(Integer countDustCollector) {
         this.countDustCollector = countDustCollector;
     }
 
-    public String getCountModes() {
+    public Integer getCountModes() {
         return countModes;
     }
 
-    public void setCountModes(String countModes) {
+    public void setCountModes(Integer countModes) {
         this.countModes = countModes;
     }
 
-    public Integer getTechnic_id() {
-        return technic_id;
-    }
-
-    public void setTechnic_id(Integer technic_id) {
-        this.technic_id = technic_id;
-    }
+//    public Technic getTechnicId() {
+//        return technicId;
+//    }
+//
+//    public void setTechnicId(Technic technicId) {
+//        this.technicId = technicId;
+//    }
+//    public Integer getTechnicId() {
+//        return technicId;
+//    }
+//
+//    public void setTechnicId(Integer technicId) {
+//        this.technicId = technicId;
+//    }
 }

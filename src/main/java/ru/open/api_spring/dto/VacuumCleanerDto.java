@@ -7,24 +7,24 @@ import javax.validation.constraints.NotBlank;
 
 public class VacuumCleanerDto extends ModeBaseDto {
     @NotBlank
-    private String countDustCollector;
+    private Integer countDustCollector;
 
     @NotBlank
-    private String countModes;
+    private Integer countModes;
 
-    public String getCountDustCollector() {
+    public Integer getCountDustCollector() {
         return countDustCollector;
     }
 
-    public void setCountDustCollector(String countDustCollector) {
+    public void setCountDustCollector(Integer countDustCollector) {
         this.countDustCollector = countDustCollector;
     }
 
-    public String getCountModes() {
+    public Integer getCountModes() {
         return countModes;
     }
 
-    public void setCountModes(String countModes) {
+    public void setCountModes(Integer countModes) {
         this.countModes = countModes;
     }
 }

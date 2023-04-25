@@ -11,7 +11,7 @@ public class SmartphoneDto extends ModeBaseDto {
     private String remember;
 
     @NotBlank
-    private String countCameras;
+    private Integer countCameras;
 
     public String getRemember() {
         return remember;
@@ -21,11 +21,11 @@ public class SmartphoneDto extends ModeBaseDto {
         this.remember = remember;
     }
 
-    public String getCountCameras() {
+    public Integer getCountCameras() {
         return countCameras;
     }
 
-    public void setCountCameras(String countCameras) {
+    public void setCountCameras(Integer countCameras) {
         this.countCameras = countCameras;
     }
 }

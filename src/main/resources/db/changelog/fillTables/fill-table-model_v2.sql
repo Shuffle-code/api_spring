@@ -31,4 +31,4 @@ values ('Рубик', '123as23', 'Blue', 'big', 123.56, 'AVAILABLE', 'Огонь
        ('Fridge', '1a223', 'Красный', 'big', 34445123.6, 'NOT_AVAILABLE', null, null,  null,  null, null, null, 2, 'cool', 5, null),
        ('Frost12', '1231q2232', 'Синий', 'small', 14123.56, 'AVAILABLE', null, null, null,  null, null, null, 1, 'not_cool',  6, null),
        ('Fridge1', '1adf223', 'Красный', 'big', 34445123.6, 'NOT_AVAILABLE', null, null,  null,  null, null, null, 2, 'cool', 6, null),
-       ('camCool', '23', 'Orange', 'little', 12453.6, 'AVAILABLE', null, null,  null, null, null, null, 3, 'not_cool', 7, null);
+       ('camCool', '23', 'Orange', 'little', 12453.6, 'AVAILABLE', null, null,  null, null, null, null, 3, 'not_cool', 4, null);

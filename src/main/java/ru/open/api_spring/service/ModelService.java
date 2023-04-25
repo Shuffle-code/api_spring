@@ -41,11 +41,11 @@ public class ModelService {
     public List<CommonDto> findByTechnicId(Long id){
         TypeTechnics typeTechnic = technicDao.findById(id).get().getTypeTechnic();
         System.out.println(typeTechnic.toString());
-        return findModelByType(modelDao.findByTechnicId(id), typeTechnic.toString());
+        return getModelByType(modelDao.findByTechnicId(id), typeTechnic.toString());
     }
 
     public List<CommonDto> findAllModelByTypeTechnics(String name){
-        return findModelByType(modelDao.findAllByTypeTechnic(name), name);
+        return getModelByType(modelDao.findAllByTypeTechnic(name), name);
     }
 
     public List<Model> findByNameNew(String name){
@@ -68,7 +68,7 @@ public class ModelService {
         return modelDao.findAllSortCost();
     }
 
-    public List<CommonDto> findModelByType(List<Model> modelList, String name){
+    public List<CommonDto> getModelByType(List<Model> modelList, String name){
         List<CommonDto> dtoList = new ArrayList<>();
         for (Model m : modelList) {
             switch (name){
@@ -76,7 +76,7 @@ public class ModelService {
                     dtoList.add(modelMapper.map(m, TvDto.class));
                     break;
                 case ("PC"):
-                    dtoList.add(modelMapper.map(m, PCDto.class));
+                    dtoList.add(modelMapper.map(m, PcDto.class));
                     break;
                 case ("VACUUM_CLEANER"):
                     dtoList.add(modelMapper.map(m, VacuumCleanerDto.class));
@@ -91,5 +91,31 @@ public class ModelService {
         }
         return dtoList;
     }
+
+//    public CommonDto getModelByType(Model model){
+//        model.
+//
+//        for (Model m : modelList) {
+//            switch (name){
+//                case ("TV"):
+//                    dtoList.add(modelMapper.map(m, TvDto.class));
+//                    break;
+//                case ("PC"):
+//                    dtoList.add(modelMapper.map(m, PcDto.class));
+//                    break;
+//                case ("VACUUM_CLEANER"):
+//                    dtoList.add(modelMapper.map(m, VacuumCleanerDto.class));
+//                    break;
+//                case ("FRIDGE"):
+//                    dtoList.add(modelMapper.map(m, FridgeDto.class));
+//                    break;
+//                case ("SMARTPHONE"):
+//                    dtoList.add(modelMapper.map(m, SmartphoneDto.class));
+//                    break;
+//            }
+//        }
+//        return dtoList;
+//    }
+
 
 }

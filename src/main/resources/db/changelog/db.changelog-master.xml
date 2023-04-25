@@ -11,7 +11,7 @@
     <include
             file="db/changelog/createTables/create-table-technic.xml"/>
     <include
-            file="db/changelog/createTables/create-table-model_v1.xml"/>
+            file="db/changelog/createTables/create-table-model_v2.xml"/>
 
 
     <!-- =====> изменение таблиц <===== -->
@@ -23,7 +23,7 @@
     <include
             file="db/changelog/fillTables/fill-table-technic.xml"/>
     <include
-            file="db/changelog/fillTables/fill-table-model_v1.xml"/>
+            file="db/changelog/fillTables/fill-table-model_v2.xml"/>
 
 
 

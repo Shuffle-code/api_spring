@@ -47,20 +47,19 @@ public class Model {
     private String remember;
 
     @Column(name = "count_cameras")
-    private String countCameras;
+    private Integer countCameras;
 
     @Column(name = "count_doors")
-    private String countDoors;
+    private Integer countDoors;
 
     @Column(name = "count_modes")
-    private String countModes;
+    private Integer countModes;
 
     @Column(name = "count_dust_collector")
-    private String countDustCollector;
+    private Integer countDustCollector;
 
     @Column(name = "type_compressor")
     private String typeCompressor;
-
     public Long getId() {
         return id;
     }
@@ -124,15 +123,6 @@ public class Model {
     public void setTechnology(String technology) {
         this.technology = technology;
     }
-
-//    public Technic getTechnic() {
-//        return technic;
-//    }
-//
-//    public void setTechnic(Technic technic) {
-//        this.technic = technic;
-//    }
-
     public Presence getPresence() {
         return presence;
     }
@@ -157,35 +147,35 @@ public class Model {
         this.remember = remember;
     }
 
-    public String getCountCameras() {
+    public Integer getCountCameras() {
         return countCameras;
     }
 
-    public void setCountCameras(String countCameras) {
+    public void setCountCameras(Integer countCameras) {
         this.countCameras = countCameras;
     }
 
-    public String getCountDoors() {
+    public Integer getCountDoors() {
         return countDoors;
     }
 
-    public void setCountDoors(String countDoors) {
+    public void setCountDoors(Integer countDoors) {
         this.countDoors = countDoors;
     }
 
-    public String getCountModes() {
+    public Integer getCountModes() {
         return countModes;
     }
 
-    public void setCountModes(String countModes) {
+    public void setCountModes(Integer countModes) {
         this.countModes = countModes;
     }
 
-    public String getCountDustCollector() {
+    public Integer getCountDustCollector() {
         return countDustCollector;
     }
 
-    public void setCountDustCollector(String countDustCollector) {
+    public void setCountDustCollector(Integer countDustCollector) {
         this.countDustCollector = countDustCollector;
     }
 

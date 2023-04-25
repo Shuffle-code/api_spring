@@ -2,10 +2,9 @@ package ru.open.api_spring.dto;
 
 import ru.open.api_spring.dto.common.ModeBaseDto;
 
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 
-public class PCDto extends ModeBaseDto {
+public class PcDto extends ModeBaseDto {
 
     @NotNull
     private String category;

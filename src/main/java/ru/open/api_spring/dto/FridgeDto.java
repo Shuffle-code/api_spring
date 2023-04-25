@@ -9,16 +9,16 @@ import java.util.Objects;
 public class FridgeDto extends ModeBaseDto {
 
     @NotBlank
-    private String countDoors;
+    private Integer countDoors;
 
     @NotBlank
     private String typeCompressor;
 
-    public String getCountDoors() {
+    public Integer getCountDoors() {
         return countDoors;
     }
 
-    public void setCountDoors(String countDoors) {
+    public void setCountDoors(Integer countDoors) {
         this.countDoors = countDoors;
     }
 
