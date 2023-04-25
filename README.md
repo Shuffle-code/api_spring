@@ -7,7 +7,7 @@
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
 ![GitHub](https://img.shields.io/badge/-liquibase-blueviolet?style=for-the-badge&logo=appveyor)
 ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
-![Image](src/main/resources/Гифка с Gifius.ru.gif)
+![Image](https://github.com/Shuffle-code/api_spring/src/main/resources/Гифка с Gifius.ru.gif)
 
 <br>
 
