@@ -18,7 +18,6 @@ public class TechnicService {
         this.modelMapper = modelMapper;
     }
 
-
     public List<Technic> findAll(){
         return technicDao.findAll();
     }

@@ -3,6 +3,7 @@ package ru.open.api_spring.controller;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import ru.open.api_spring.dto.common.TechnicDto;
 import ru.open.api_spring.entity.Technic;
@@ -34,6 +35,5 @@ public class TechnicController {
 	public void createTechnic(@RequestBody TechnicDto technicDto) {
 		technicService.save(technicDto);
 	}
-
 
 }

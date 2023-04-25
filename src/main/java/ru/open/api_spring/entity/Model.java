@@ -84,6 +84,14 @@ public class Model {
         this.serialNumber = serialNumber;
     }
 
+    public void setTechnic(Technic technic) {
+        this.technic = technic;
+    }
+
+//    public Technic getTechnic() {
+//        return technic;
+//    }
+
     public String getColor() {
         return color;
     }

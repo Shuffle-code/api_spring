@@ -67,6 +67,9 @@ public class ModelService {
     public List<Model> findAllSortCost(){
         return modelDao.findAllSortCost();
     }
+    public void deleteById(Long id) {
+        modelDao.deleteById(id);
+    }
 
     public List<CommonDto> getModelByType(List<Model> modelList, String name){
         List<CommonDto> dtoList = new ArrayList<>();
@@ -91,31 +94,4 @@ public class ModelService {
         }
         return dtoList;
     }
-
-//    public CommonDto getModelByType(Model model){
-//        model.
-//
-//        for (Model m : modelList) {
-//            switch (name){
-//                case ("TV"):
-//                    dtoList.add(modelMapper.map(m, TvDto.class));
-//                    break;
-//                case ("PC"):
-//                    dtoList.add(modelMapper.map(m, PcDto.class));
-//                    break;
-//                case ("VACUUM_CLEANER"):
-//                    dtoList.add(modelMapper.map(m, VacuumCleanerDto.class));
-//                    break;
-//                case ("FRIDGE"):
-//                    dtoList.add(modelMapper.map(m, FridgeDto.class));
-//                    break;
-//                case ("SMARTPHONE"):
-//                    dtoList.add(modelMapper.map(m, SmartphoneDto.class));
-//                    break;
-//            }
-//        }
-//        return dtoList;
-//    }
-
-
 }

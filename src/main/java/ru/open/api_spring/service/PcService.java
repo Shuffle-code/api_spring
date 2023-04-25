@@ -4,29 +4,71 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import ru.open.api_spring.dao.ModelDao;
 import ru.open.api_spring.dto.PcDto;
-import ru.open.api_spring.dto.TvDto;
+import ru.open.api_spring.dto.common.CommonDto;
 import ru.open.api_spring.entity.Model;
 
-import java.util.ArrayList;
 import java.util.List;
-
 @Service
-public class PcService {
+public class PcService extends CommonService{
 
     private final ModelDao modelDao;
-    private final ModelMapper modelMapper;
 
     public PcService(ModelDao modelDao, ModelMapper modelMapper) {
+        super(modelMapper);
         this.modelDao = modelDao;
-        this.modelMapper = modelMapper;
     }
 
-    public List<PcDto> findAllPc() {
-        List<PcDto> pcDtoList = new ArrayList<>();
-        for (Model m : modelDao.findAllPc()) {
-            pcDtoList.add(modelMapper.map(m, PcDto.class));
-        }
-        return pcDtoList;
+    public void save(PcDto pcDto){
+        modelDao.save(modelMapper.map(pcDto, Model.class));
     }
+
+    public List<CommonDto> findAllPc() {
+        try {
+            return mappingList(modelDao.findAllPc());
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<CommonDto> findPcName(String name) {
+        try {
+            return mappingList(modelDao.findPcByName(name));
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<CommonDto> findPcCategory(String name) {
+        try {
+            return mappingList(modelDao.findPCByCategory(name));
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+//    public List<PcDto> mappingList(List<Model> modelList){
+//        List<PcDto> pcDtoList = new ArrayList<>();
+//        for (Model m : modelList) {
+//            pcDtoList.add(modelMapper.map(m, PcDto.class));
+//        }
+//        return pcDtoList;
+//    }
+
+    public List<CommonDto> findPcProcessor(String processor) {
+        try {
+            return mappingList(modelDao.findPcByProcessor(processor));
+        } catch (NoSuchFieldException e) {
+            throw new RuntimeException(e);
+        } catch (IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
 }

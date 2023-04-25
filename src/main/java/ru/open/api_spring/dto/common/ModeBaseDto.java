@@ -29,13 +29,13 @@ public class ModeBaseDto implements CommonDto {
     @NotNull
     private Technic technic;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
 
     public String getName() {
         return name;
