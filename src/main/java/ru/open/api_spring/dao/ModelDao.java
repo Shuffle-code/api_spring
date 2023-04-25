@@ -64,4 +64,17 @@ public interface ModelDao extends JpaRepository<Model, Long> {
     @Query(value = "SELECT * FROM model WHERE technic_id IN ( SELECT id from technic  where technic.type_technic = 'FRIDGE' and count_doors = :count)",
             nativeQuery = true)
     List<Model> findFridgeByCountDoor(@Param ("count") Integer count);
+
+    @Query(value = "SELECT * FROM model WHERE technic_id IN ( SELECT id from technic  where technic.type_technic = 'SMARTPHONE')",
+            nativeQuery = true)
+    List<Model> findAllSmartphone();
+    @Query(value = "SELECT * FROM model WHERE technic_id IN ( SELECT id from technic  where technic.type_technic = 'SMARTPHONE' and LOWER(name) = LOWER(:name))",
+            nativeQuery = true)
+    List<Model> findSmartphoneByName(@Param ("name") String name);
+    @Query(value = "SELECT * FROM model WHERE technic_id IN ( SELECT id from technic  where technic.type_technic = 'SMARTPHONE' and LOWER(remember) = LOWER(:remember))",
+            nativeQuery = true)
+    List<Model> findSmartphoneByCompressor(@Param ("remember") String remember);
+    @Query(value = "SELECT * FROM model WHERE technic_id IN ( SELECT id from technic  where technic.type_technic = 'SMARTPHONE' and count_cameras = :count)",
+            nativeQuery = true)
+    List<Model> findSmartphoneByCountDoor(@Param ("count") Integer count);
 }

@@ -31,13 +31,13 @@ public class FridgeController {
 		}
 	}
 
-	@Operation(summary = "Получение списка холодильника по наименованию")
+	@Operation(summary = "Получение списка холодильников по наименованию")
 	@GetMapping("/{name}")
 	public List<CommonDto> findAllName(@PathVariable("name") String name) {
 		return fridgeService.findFridgeName(name);
 	}
 
-	@Operation(summary = "Получение списка PC по количеству дверей")
+	@Operation(summary = "Получение списка холодильников по количеству дверей")
 	@GetMapping("/category/{categogy}")
 	public List<CommonDto> findAllCategory(@PathVariable("categogy") Integer door) {
 		return fridgeService.findFridgeByCountDoor(door);
@@ -49,7 +49,7 @@ public class FridgeController {
 		fridgeService.save(fridgeDto);
 	}
 
-	@Operation(summary = "Получение списка PC по типу компрессора")
+	@Operation(summary = "Получение списка холодильников по типу компрессора")
 	@GetMapping("/comp/{compressor}")
 	public List<CommonDto> findAllProcessor(@PathVariable("compressor") String compressor) {
 		return fridgeService.findFridgeCompressor(compressor);
